@@ -39,10 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_swagger',
-    'album',
+    # 'album',
     'artist',
-    'music',
-    'music_album_artist',
+    # 'music',
+    # 'music_album_artist',
 ]
 
 MIDDLEWARE = [

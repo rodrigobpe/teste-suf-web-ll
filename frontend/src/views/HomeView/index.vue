@@ -1,11 +1,15 @@
 <script setup>
-import {useArtistStore} from '../../store'
+import {useArtistStore} from '../../store/artistStore'
 
+const store = useArtistStore()
+store.getArtists()
 
 </script>
 
 <template>
-<h1>teste</h1>  
+    <ul>
+        <li v-for="artist in store.artists" :key="artist.id">{{ artist.name }} - {{ artist.id }}</li>
+    </ul>
 </template>
 
 

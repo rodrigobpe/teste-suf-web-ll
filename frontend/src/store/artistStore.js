@@ -8,8 +8,9 @@ export const useArtistStore = defineStore('artists', () => {
 
     const getArtists = async () => {
         const res = await api.get('/api/artists')
+        console.log(res);
         const data = res.data
         artists.value = data
     }
-    return { getArtists }
+    return { getArtists, artists }
 })

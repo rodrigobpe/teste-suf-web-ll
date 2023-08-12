@@ -9,7 +9,6 @@ class ArtistAPIView(APIView):
 
     def get(self,request):
         artists = Artist.objects.all()
-        print(Artist.objects.all())
         if artists:
             artist_serializer = self.serializer_class(artists,many=True)
             return Response(artist_serializer.data,status=status.HTTP_200_OK)

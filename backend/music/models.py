@@ -1,5 +1,7 @@
 from django.db import models
-from album.models import Album 
+from album.models import Album
+
+
 # Create your models here.
 class Music(models.Model):
     id = models.BigAutoField(primary_key=True)

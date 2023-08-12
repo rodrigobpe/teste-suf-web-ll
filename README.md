@@ -7,5 +7,5 @@
 
 [python-badge]: https://badgen.net/badge/Python/3.11.3/blue
 [python-url]: https://www.python.org/
-[django-badge]: https://badgen.net/badge/Django/4.2.4/purple
+[django-badge]: https://badgen.net/badge/Django/4.2.4/green
 [django-url]: https://www.djangoproject.com/

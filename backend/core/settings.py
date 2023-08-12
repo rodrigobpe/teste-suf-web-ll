@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'album',
     'artist',
     'music',
-    'templates'
+    'templates',
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
@@ -53,7 +54,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
+
+CORS_ORIGIM_ALLOW_ALL = True
 
 ROOT_URLCONF = 'core.urls'
 

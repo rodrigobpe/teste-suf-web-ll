@@ -8,12 +8,7 @@ class ArtistAPIView(APIView):
     serializer_class = ArtistSerializer
 
     def get(self,request):
-        artist_id = request.query_params.get('q',None)
-        if artist_id:
-            artists = Artist.objects.filter(id=artist_id)
-        else:
-            artists = Artist.objects.all()
-        
+        artists = Artist.objects.all()
         if artists:
             artist_serializer = self.serializer_class(artists,many=True)
             return Response(artist_serializer.data,status=status.HTTP_200_OK)

@@ -59,6 +59,11 @@ MIDDLEWARE = [
 
 CORS_ORIGIM_ALLOW_ALL = True
 
+CORS_ORIGIN_WHITELIST = (
+  'http://localhost:5173',
+)
+
+
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [

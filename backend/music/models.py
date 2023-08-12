@@ -7,7 +7,7 @@ from artist.models import Artist
 class Music(models.Model):
     id = models.BigAutoField(primary_key=True)
     id_album = models.ForeignKey(Album, on_delete=models.CASCADE)
-    id_artist = models.ManyToManyField(Artist)
+    id_artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     duration = models.IntegerField()
     is_favorite = models.BooleanField()

@@ -15,4 +15,4 @@ class Album(models.Model):
         db_table = 'album'
 
     def __str__(self) -> str:
-        return self.album_name
+        return f"{self.id_artist} - {self.album_name}"

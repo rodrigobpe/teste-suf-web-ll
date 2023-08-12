@@ -10,4 +10,4 @@ class Artist(models.Model):
         db_table = 'artist'
 
     def __str__(self) -> str:
-        return self.name        
+        return self.name

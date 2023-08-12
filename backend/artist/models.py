@@ -8,4 +8,6 @@ class Artist(models.Model):
     
     class Meta:
         db_table = 'artist'
-        
+
+    def __str__(self) -> str:
+        return self.name        

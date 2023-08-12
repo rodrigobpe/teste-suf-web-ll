@@ -61,6 +61,7 @@ CORS_ORIGIM_ALLOW_ALL = True
 
 CORS_ORIGIN_WHITELIST = (
   'http://localhost:5173',
+  'http://121.0.0.1:5173',
 )
 
 

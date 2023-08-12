@@ -7,6 +7,7 @@ from artist.models import Artist
 class Music(models.Model):
     id = models.BigAutoField(primary_key=True)
     id_album = models.ForeignKey(Album, on_delete=models.CASCADE)
+    id_artist = models.ManyToManyField(Artist)
     name = models.CharField(max_length=50)
     duration = models.IntegerField()
     is_favorite = models.BooleanField()
@@ -16,10 +17,3 @@ class Music(models.Model):
 
     def __str__(self) -> str:
         return f"{self.id_album.id_artist.get_name()} - {self.name}"
-
-
-class Music_has_artist(models.Model):
-    id_artist = models.OneToOneField(Artist)
-
-    class Meta:
-        db_table = 'music_has_artist'

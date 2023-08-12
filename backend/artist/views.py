@@ -9,6 +9,7 @@ class ArtistAPIView(APIView):
 
     def get(self,request):
         artists = Artist.objects.all()
+        print(Artist.objects.all())
         if artists:
             artist_serializer = self.serializer_class(artists,many=True)
             return Response(artist_serializer.data,status=status.HTTP_200_OK)
@@ -30,15 +31,15 @@ class ArtistAPIView(APIView):
         
         return Response({'message':'Something is Wrong'},status=status.HTTP_400_BAD_REQUEST)
 
-class ArtistByIdAPIView(APIView):
-        serializer_class = ArtistSerializer
-        def get(self, request,*args,**kwargs):
-            artist_id = self.kwargs['id']
-            artist = Artist.objects.filter(id=artist_id)
+# class ArtistByIdAPIView(APIView):
+#         serializer_class = ArtistSerializer
+#         def get(self, request,*args,**kwargs):
+#             artist_id = self.kwargs['id']
+#             artist = Artist.objects.filter(id=artist_id)
             
-            if artist:
-                artist_serializer = self.serializer_class(artist,many=True)
-                return Response(artist_serializer.data,status=status.HTTP_200_OK)
-            else:
-                return Response({'message':'Artist not found'},status=status.HTTP_404_NOT_FOUND)
+#             if artist:
+#                 artist_serializer = self.serializer_class(artist,many=True)
+#                 return Response(artist_serializer.data,status=status.HTTP_200_OK)
+#             else:
+#                 return Response({'message':'Artist not found'},status=status.HTTP_404_NOT_FOUND)
 

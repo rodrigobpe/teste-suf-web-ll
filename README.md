@@ -13,5 +13,5 @@
 [django-url]: https://www.djangoproject.com/
 [vite-badge]: https://badgen.net/badge/Vite/4.4.5/yellow
 [vite-url]: https://vitejs.dev/
-[node-badge]: [https://badgen.net/badge/Node/18.16.1/green
+[node-badge]: https://badgen.net/badge/Node/18.16.1/green
 [node-url]: https://nodejs.org/en

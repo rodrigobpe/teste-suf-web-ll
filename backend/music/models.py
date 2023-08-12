@@ -14,4 +14,4 @@ class Music(models.Model):
         db_table = 'music'
 
     def __str__(self) -> str:
-        return self.name
+        return f"{self.id_album.id_artist.get_name()} - {self.name}"

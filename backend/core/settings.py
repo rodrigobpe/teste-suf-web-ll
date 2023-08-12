@@ -43,11 +43,11 @@ INSTALLED_APPS = [
     'artist',
     'music',
     'templates',
-    "corsheaders",
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -59,11 +59,6 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-# CORS_ORIGIN_WHITELIST = (
-#   'http://localhost:5173',
-#   'http://121.0.0.1:5173',
-#   'http://127.0.0.1:5173'
-# )
 
 
 ROOT_URLCONF = 'core.urls'

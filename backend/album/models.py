@@ -13,3 +13,6 @@ class Album(models.Model):
 
     class Meta:
         db_table = 'album'
+
+    def __str__(self) -> str:
+        return self.album_name

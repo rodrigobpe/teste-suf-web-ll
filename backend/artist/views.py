@@ -30,7 +30,7 @@ class ArtistAPIView(APIView):
         if artist:
             return Response({'message': 'Artist created'}, status=status.HTTP_201_CREATED)
 
-        return Response({'message': 'Something is Wrong'}, status=status.HTTP_400_BAD_REQUEST)
+        return Response({'message': 'Something went Wrong'}, status=status.HTTP_400_BAD_REQUEST)
 
 # class ArtistByIdAPIView(APIView):
 #         serializer_class = ArtistSerializer

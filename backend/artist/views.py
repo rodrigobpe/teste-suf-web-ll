@@ -18,6 +18,19 @@ class ArtistAPIView(APIView):
             artist_serializer = self.serializer_class(artists,many=True)
             return Response(artist_serializer.data,status=status.HTTP_200_OK)
         else:
-            return Response({'message':'artist not found'},status=status.HTTP_404_NOT_FOUND)
+            return Response({'message':'artist not found'},status=status.HTTP_400_BAD_REQUEST)
         
+    def post(self,request):
+        name = request.data.get('name',None)
+        post_data ={
+            'name':name
+        }
+
+        serializer = self.serializer_class(data=post_data)
+        if serializer.is_valid(raise_exception=True):
+            artist = serializer.save()
+
+        if artist:
+            return Response({'message':'Artist created'},status=status.HTTP_201_CREATED)
         
+        return Response({'message':'Something is Wrong'},status=status.HTTP_400_BAD_REQUEST)

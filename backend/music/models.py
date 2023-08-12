@@ -19,7 +19,7 @@ class Music(models.Model):
 
 
 class Music_has_artist(models.Model):
-    id_artist = models.On(Artist)
+    id_artist = models.OneToOneField(Artist)
 
     class Meta:
         db_table = 'music_has_artist'

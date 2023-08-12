@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'album',
     'artist',
-    # 'music',
+    'music',
     # 'music_album_artist',
 ]
 

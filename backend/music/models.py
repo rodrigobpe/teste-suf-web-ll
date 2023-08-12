@@ -1,5 +1,6 @@
 from django.db import models
 from album.models import Album
+from artist.models import Artist
 
 
 # Create your models here.
@@ -15,3 +16,10 @@ class Music(models.Model):
 
     def __str__(self) -> str:
         return f"{self.id_album.id_artist.get_name()} - {self.name}"
+
+
+class Music_has_artist(models.Model):
+    id_artist = models.ManyToManyField(Artist)
+
+    class Meta:
+        db_table = 'music_has_artist'

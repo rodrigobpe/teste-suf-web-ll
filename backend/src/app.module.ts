@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config'
-import { PrismaModule } from './config/db/prisma.module';
+import { ArtistModule } from './modules/artist/artist.module';
 
 @Module({
   imports: [ConfigModule.forRoot({
     isGlobal: true
   }),
-    PrismaModule
+    ArtistModule
   ],
   controllers: [],
   providers: [],

@@ -4,13 +4,13 @@ import { IsString,IsNotEmpty,IsDate,IsBoolean,IsInt } from "class-validator";
 export class CreateAlbumDTO{
     @IsString()
     @IsNotEmpty()
-    @ApiProperty({type:String,description:"Coloque o nome do artista",example:"Taylor Swift"})
+    @ApiProperty({type:String,description:"Coloque o nome do album",example:"1969"})
     name:string;
 
-    @IsDate()
+    @IsString()
     @IsNotEmpty()
-    @ApiProperty({type:Date,description:"Coloque a data de lançamento do album",example:"2022-03-31"})
-    date_release:Date;
+    @ApiProperty({type:String,description:"Coloque a data de lançamento do album",example:"2014-10-27"})
+    date_release:string;
 
     @IsString()
     @IsNotEmpty()
@@ -19,11 +19,6 @@ export class CreateAlbumDTO{
 
     @IsBoolean()
     @IsNotEmpty()
-    @ApiProperty({type:Boolean,description:"Por padrão o valor vem (false)",example:true})
-    is_favorite:boolean;    
-
-    @IsInt()
-    @IsNotEmpty()
-    @ApiProperty({type:Number,description:"Coloque o ID do artista",example:1})
-    id_artist?:number;   
+    @ApiProperty({type:Boolean,description:"Por padrão o valor vem (false)",example:false})
+    is_favorite:boolean;      
 }

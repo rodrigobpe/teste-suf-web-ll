@@ -14,7 +14,7 @@ export class AlbumController {
     @ApiParam({ name: "id", example: 1, type: Number })
     @ApiCreatedResponse({ status: 201, description: "The record has been successfully created.", type: Album })
     async createAlbum(@Param('id',ParseIntPipe) id_artist:number, @Body() { name,date_release,genre,is_favorite }: CreateAlbumDTO) {
-        const album = await this.artistService.create({ name,date_release,genre,is_favorite,id_artist })
+        const album = await this.artistService.create({ name,date_release:new Date(date_release),genre,is_favorite,id_artist })
         return album
     }
 
@@ -31,6 +31,15 @@ export class AlbumController {
     @ApiNotFoundResponse({ description: "Not found" },)
     async getAlbumById(@Param('id',ParseIntPipe) id:number ) {
         const album = await this.artistService.getById({ id })
+        return album
+    }
+
+    @Get('artists/:id/albums')
+    @ApiParam({ name: "id", example: 1, type: Number })
+    @ApiOkResponse({ status: 200, type: Album })
+    @ApiNotFoundResponse({ description: "Not found" },)
+    async getAlbumByArtists(@Param('id',ParseIntPipe) id_artist:number ) {
+        const album = await this.artistService.getByArtist({ id_artist })
         return album
     }
 

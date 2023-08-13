@@ -6,6 +6,13 @@ import { PrismaService } from 'src/config/db/prisma.service';
 @Injectable()
 export class AlbumRepository implements IAlbumRepository {
     constructor(private readonly prisma: PrismaService) { }
+    async getByArtist({ id_artist }: { id_artist: number; }): Promise<Album[] | any> {
+        const albums = await this.prisma.album.findMany({
+            where:{id_artist}
+        })
+
+        return albums
+    }
     async create({ name, date_release, genre, id_artist, is_favorite }: Omit<Album, 'id'>): Promise<Album> {
         const album = await this.prisma.album.create({
             data: { name,date_release,genre,is_favorite,id_artist }

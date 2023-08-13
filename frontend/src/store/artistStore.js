@@ -7,7 +7,7 @@ export const useArtistStore = defineStore('artists', () => {
     const artists = ref([])
 
     const getArtists = async () => {
-        const res = await api.get('/api/artists')
+        const res = await api.get('/artists')
         console.log(res);
         const data = res.data
         artists.value = data

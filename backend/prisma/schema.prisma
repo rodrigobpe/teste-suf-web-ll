@@ -10,11 +10,44 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User{
-  id String @id @default(uuid())
-  name String
-  email String @unique
+model User {
+  id       String @id @default(uuid())
+  name     String
+  email    String @unique
   password String
 
   @@map("user")
+}
+
+model Artist {
+  id   Int    @id @default(autoincrement())
+  name String
+
+  albums Album[]
+  @@map("artist")
+}
+
+model Album {
+  id Int @id @default(autoincrement())
+  name String
+  date_release DateTime
+  genre String
+  is_favorite Boolean
+
+  artist Artist @relation(fields: [id_artist], references: [id])
+  id_artist Int 
+
+  musics Music[]
+
+  @@map("album")
+}
+
+model Music {
+  id Int @id @default(autoincrement())
+  name String
+  duration Int
+  is_favorite Boolean
+
+  album Album @relation(fields: [id_album],references: [id])
+  id_album Int
 }

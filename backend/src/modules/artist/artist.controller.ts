@@ -5,7 +5,7 @@ import { ApiCreatedResponse, ApiTags, ApiHeader, ApiNotFoundResponse, ApiParam, 
 import { Artist } from './artist.entity'
 import { UpdateArtistDTO } from './dto/update-artist.dto'
 
-@ApiTags('Artists')
+@ApiTags('Artistas')
 @Controller('artists')
 export class ArtistController {
     constructor(private readonly artistService: ArtistService) { }

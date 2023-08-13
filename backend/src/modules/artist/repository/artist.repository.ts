@@ -14,7 +14,7 @@ export class ArtistRepository implements IArtistRepository {
         return artist
     }
     async getAll(): Promise<Artist[]> {
-        const artists = await this.prisma.artist.findMany()
+        const artists = await this.prisma.artist.findMany({include:{albums:true}})
         return artists
     }
     async getById({ id }: { id: number; }): Promise<Artist> {
